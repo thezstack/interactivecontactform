@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body>
+<h1> Hi, My Name is </h1>
+<form >
+  <input id="name" type="text" />
+  <input type="button" value="Save/Show" onclick="insert()" />
+</form>
+
+<div id="display"></div>
+
+
+<script>
+    var names = [];
+    var nameInput  = document.getElementById("name");
+    var messageBox  = document.getElementById("display");
+
+  function insert (){
+    names.push(nameInput.value);
+    clearAndShow();
+    }
+
+  function clearAndShow () {
+  // Clear our fields
+  nameInput.value = "";
+
+
+  // Show our output
+  messageBox.innerHTML = "";
+
+  messageBox.innerHTML += "Hey," + names.join(", ");
+}
+
+
+</script>
+
+</body>
+</html>
